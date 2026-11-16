@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>A Question for Vanshika</title>
-    <!-- Importing Google Fonts for that clean, premium look -->
+    <!-- Importing Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Courier+Prime:wght@700&display=swap" rel="stylesheet">
     <!-- Importing GSAP for silky smooth animations -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
@@ -18,19 +18,19 @@
         .dark-void { position: absolute; inset: 0; background: radial-gradient(circle, #2a0000 0%, #000000 100%); z-index: 1; opacity: 0; pointer-events: none; }
 
         /* Premium Glassmorphism Panel */
-        .glass-panel { position: relative; z-index: 10; background: rgba(20, 20, 20, 0.4); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 24px; padding: 3rem; text-align: center; box-shadow: 0 30px 60px rgba(0,0,0,0.6); max-width: 600px; width: 90%; display: flex; flex-direction: column; align-items: center; }
+        .glass-panel { position: relative; z-index: 10; background: rgba(20, 20, 20, 0.4); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 24px; padding: 2.5rem; text-align: center; box-shadow: 0 30px 60px rgba(0,0,0,0.6); max-width: 550px; width: 90%; display: flex; flex-direction: column; align-items: center; }
         h1 { font-size: 3rem; font-weight: 900; letter-spacing: -1px; margin-bottom: 0.3rem; background: linear-gradient(135deg, #fff, #aaa); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
         p.subtitle { font-size: 1.1rem; color: #ccc; margin-bottom: 1.5rem; }
 
         /* Begging Meme Aesthetic Integration */
-        .begging-pic { width: 100%; max-width: 320px; height: auto; object-fit: cover; border-radius: 16px; margin-bottom: 2rem; border: 1px solid rgba(255, 255, 255, 0.15); box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+        .begging-pic { width: 100%; max-width: 280px; height: auto; object-fit: cover; border-radius: 16px; margin-bottom: 2rem; border: 1px solid rgba(255, 255, 255, 0.15); box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
 
         /* Modern Buttons */
         .btn-container { display: flex; justify-content: center; gap: 1.5rem; align-items: center; position: relative; width: 100%; }
-        button { cursor: pointer; border: none; border-radius: 50px; font-size: 1.1rem; font-weight: 700; padding: 1.2rem 3rem; transition: background 0.3s; }
-        #yesBtn { background: white; color: black; box-shadow: 0 0 20px rgba(255,255,255,0.2); z-index: 2; }
+        button { cursor: pointer; border: none; border-radius: 50px; font-size: 1.1rem; font-weight: 700; padding: 1.1rem 2.8rem; transition: background 0.3s; }
+        #yesBtn { background: white; color: black; box-shadow: 0 0 20px rgba(255,255,255,0.2); z-index: 5; position: relative; }
         #yesBtn:hover { box-shadow: 0 0 40px rgba(255,255,255,0.5); }
-        #noBtn { background: rgba(255, 255, 255, 0.08); color: white; border: 1px solid rgba(255,255,255,0.15); backdrop-filter: blur(5px); z-index: 2; }
+        #noBtn { background: rgba(255, 255, 255, 0.08); color: white; border: 1px solid rgba(255,255,255,0.15); backdrop-filter: blur(5px); z-index: 2; position: relative; }
 
         /* Subtle Hint Text */
         .hint-text { font-size: 0.8rem; color: rgba(255, 255, 255, 0.45); margin-top: 1.8rem; font-style: italic; letter-spacing: 0.3px; }
@@ -38,8 +38,8 @@
         /* The Vibe Shift Elements (Hidden initially) */
         #eminem-img { position: absolute; z-index: 5; height: 90vh; max-width: 90vw; object-fit: contain; opacity: 0; pointer-events: none; filter: drop-shadow(0 0 40px red); }
         .blood-pact-container { position: relative; z-index: 10; display: none; text-align: center; width: 100%; }
-        h2.glitch { font-family: 'Courier Prime', monospace; font-size: 4.5rem; color: #ff0000; text-transform: uppercase; text-shadow: 4px 4px 0px #4a0000; margin-bottom: 2rem; }
-        .terms { font-family: 'Courier Prime', monospace; color: #ffbb00; font-size: 1.3rem; line-height: 1.8; text-align: left; background: rgba(0,0,0,0.85); padding: 2.5rem; border-left: 6px solid #ff0000; display: inline-block; box-shadow: 0 20px 50px rgba(255,0,0,0.2); }
+        h2.glitch { font-family: 'Courier Prime', monospace; font-size: 4rem; color: #ff0000; text-transform: uppercase; text-shadow: 4px 4px 0px #4a0000; margin-bottom: 2rem; }
+        .terms { font-family: 'Courier Prime', monospace; color: #ffbb00; font-size: 1.2rem; line-height: 1.8; text-align: left; background: rgba(0,0,0,0.85); padding: 2rem; border-left: 6px solid #ff0000; display: inline-block; box-shadow: 0 20px 50px rgba(255,0,0,0.2); max-width: 90%; }
         .terms li { margin-bottom: 1rem; list-style: none; }
     </style>
 </head>
@@ -57,7 +57,7 @@
         <h1>Vanshika.</h1>
         <p class="subtitle">Will you go on a Go-Kart date with me?</p>
         
-        <!-- Interactive Aesthetic Scene Added Here -->
+        <!-- Interactive Aesthetic Scene -->
         <img class="begging-pic" src="begging.png" alt="Please Vanshika">
 
         <div class="btn-container">
@@ -79,7 +79,6 @@
     </div>
 
     <script>
-        // Target elements
         const yesBtn = document.getElementById('yesBtn');
         const noBtn = document.getElementById('noBtn');
         const mainCard = document.getElementById('mainCard');
@@ -90,35 +89,66 @@
 
         const pleas = ["Are you sure? 🥺", "I'll let you win! 🏎️", "Free food? 🍕", "Pleeease? 🙏", "Okay, last chance! 🔥"];
         let pleaIndex = 0;
+        let dodgeCount = 0;
 
         // Intro Cinematic Animation
         gsap.to(bg, { scale: 1.05, duration: 20, ease: "sine.out" });
         gsap.from(mainCard, { y: 40, opacity: 0, duration: 1.5, ease: "power3.out", delay: 0.5 });
 
-        // Clicking NO cycles the text, hops slightly, and makes YES bigger
+        // Function to dodge far away twice, then return on the 3rd attempt
+        function handleDodge(e) {
+            if (dodgeCount < 2) {
+                if (e && e.cancelable) e.preventDefault(); // Stops mobile tap from clicking through
+                dodgeCount++;
+
+                // Calculate safe screen boundaries so it flies far away without leaving the screen
+                const maxX = (window.innerWidth / 2) - 100;
+                const maxY = (window.innerHeight / 2) - 80;
+                
+                // Force it to jump far from center
+                const dirX = Math.random() > 0.5 ? 1 : -1;
+                const dirY = Math.random() > 0.5 ? 1 : -1;
+                const moveX = dirX * (maxX * (0.6 + Math.random() * 0.4));
+                const moveY = dirY * (maxY * (0.6 + Math.random() * 0.4));
+
+                noBtn.innerText = dodgeCount === 1 ? "Nice try! 😂" : "Too slow! 🏎️";
+                gsap.to(noBtn, { x: moveX, y: moveY, duration: 0.25, ease: "power3.out" });
+
+            } else if (dodgeCount === 2) {
+                dodgeCount++;
+                // Snap back to original position on the 3rd attempt
+                noBtn.innerText = "Fine, click me 😅";
+                gsap.to(noBtn, { x: 0, y: 0, duration: 0.4, ease: "back.out(1.5)" });
+            }
+        }
+
+        // Trigger dodge on both desktop hover and mobile touch
+        noBtn.addEventListener('mouseenter', handleDodge);
+        noBtn.addEventListener('touchstart', handleDodge, { passive: false });
+
+        // Once it returns to original position, let her click it to expand YES
         noBtn.addEventListener('click', () => {
+            if (dodgeCount < 3) return; // Safety check
+
             noBtn.innerText = pleas[pleaIndex % pleas.length];
             pleaIndex++;
 
-            // Little playful hop on click so she can keep pressing it
-            const moveX = (Math.random() - 0.5) * 80;
-            const moveY = (Math.random() - 0.5) * 40;
-            gsap.to(noBtn, { x: moveX, y: moveY, duration: 0.3, ease: "back.out(1.7)" });
-            
-            // Swell the YES button
-            gsap.to(yesBtn, { scale: "+=0.15", duration: 0.3 });
+            // Expand YES button massively so it eventually covers the screen/card
+            gsap.to(yesBtn, { 
+                scale: "+=0.45", 
+                duration: 0.35, 
+                ease: "back.out(1.5)" 
+            });
         });
 
         // THE VIBE SHIFT
         yesBtn.addEventListener('click', () => {
             const tl = gsap.timeline();
 
-            // 1. Instantly kill the cute vibe
             tl.to(mainCard, { scale: 0.8, opacity: 0, duration: 0.3, ease: "power2.inOut" })
               .to(bg, { opacity: 0, duration: 0.1 }, "-=0.1")
               .to(voidBg, { opacity: 1, duration: 0.1 }, "-=0.1");
 
-            // 2. Camera Shake Effect
             tl.to("body", { 
                 x: "random(-15, 15)", 
                 y: "random(-15, 15)", 
@@ -127,16 +157,13 @@
                 yoyo: true 
             });
 
-            // 3. Slam the Eminem image in with a heavy bounce
             tl.set(eminem, { opacity: 1, scale: 0, rotation: -45 })
               .to(eminem, { scale: 1, rotation: 0, duration: 1, ease: "elastic.out(1, 0.3)" }, "-=0.4");
 
-            // 4. Slide in the Blood Pact text
             tl.set(pactCard, { display: "block" })
               .from(".glitch", { y: -50, opacity: 0, duration: 0.6, ease: "power4.out" }, "-=0.8")
               .from(".terms li", { x: -30, opacity: 0, duration: 0.4, stagger: 0.1, ease: "power2.out" }, "-=0.5");
 
-            // 5. Add a subtle continuous heartbeat pulse to Eminem to match the motion blur
             gsap.to(eminem, { scale: 1.03, duration: 0.4, repeat: -1, yoyo: true, ease: "sine.inOut", delay: 1 });
         });
     </script>
