@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>A Question for Subha</title>
+    <title>A Question for Vanshika</title>
     <!-- Importing Google Fonts for that clean, premium look -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Courier+Prime:wght@700&display=swap" rel="stylesheet">
     <!-- Importing GSAP for silky smooth animations -->
@@ -12,7 +12,7 @@
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; }
         body { background: #050505; color: white; font-family: 'Inter', sans-serif; overflow: hidden; height: 100vh; display: flex; justify-content: center; align-items: center; }
-
+        
         /* The Cinematic Background */
         #bg { position: absolute; inset: 0; width: 100vw; height: 100vh; object-fit: cover; filter: brightness(0.5); z-index: 0; transform: scale(1); }
         .dark-void { position: absolute; inset: 0; background: radial-gradient(circle, #2a0000 0%, #000000 100%); z-index: 1; opacity: 0; pointer-events: none; }
@@ -28,6 +28,9 @@
         #yesBtn { background: white; color: black; box-shadow: 0 0 20px rgba(255,255,255,0.2); z-index: 2; }
         #yesBtn:hover { box-shadow: 0 0 40px rgba(255,255,255,0.5); }
         #noBtn { background: rgba(255,255,255,0.1); color: white; border: 1px solid rgba(255,255,255,0.2); backdrop-filter: blur(5px); z-index: 2; }
+
+        /* Subtle Hint Text */
+        .hint-text { font-size: 0.85rem; color: rgba(255, 255, 255, 0.55); margin-top: 2.2rem; font-style: italic; letter-spacing: 0.3px; }
 
         /* The Vibe Shift Elements (Hidden initially) */
         #eminem-img { position: absolute; z-index: 5; height: 90vh; max-width: 90vw; object-fit: contain; opacity: 0; pointer-events: none; filter: drop-shadow(0 0 40px red); }
@@ -48,12 +51,13 @@
 
     <!-- The Setup -->
     <div class="glass-panel" id="mainCard">
-        <h1>Subha.</h1>
+        <h1>Vanshika.</h1>
         <p class="subtitle">Will you go on a Go-Kart date with me?</p>
         <div class="btn-container">
             <button id="yesBtn">YES</button>
             <button id="noBtn">No</button>
         </div>
+        <p class="hint-text">(Press "No" until you think it's too soon...)</p>
     </div>
 
     <!-- The Punchline -->
@@ -77,33 +81,25 @@
         const voidBg = document.getElementById('voidBg');
         const eminem = document.getElementById('eminem-img');
 
-        const pleas = ["Are you sure?", "I'll let you win!", "Free food?", "Pleeease?", "Stop running."];
+        const pleas = ["Are you sure?", "I'll let you win!", "Free food?", "Pleeease?", "Okay, last chance!"];
         let pleaIndex = 0;
 
         // Intro Cinematic Animation
         gsap.to(bg, { scale: 1.05, duration: 20, ease: "sine.out" });
         gsap.from(mainCard, { y: 40, opacity: 0, duration: 1.5, ease: "power3.out", delay: 0.5 });
 
-        // Make the NO button dodge the mouse
-        noBtn.addEventListener('mouseenter', () => {
-            const moveX = (Math.random() - 0.5) * 200;
-            const moveY = (Math.random() - 0.5) * 100;
-
-            gsap.to(noBtn, {
-                x: moveX,
-                y: moveY,
-                duration: 0.4,
-                ease: "back.out(1.5)"
-            });
-
-            // Swell the YES button to manipulate her choice
-            gsap.to(yesBtn, { scale: "+=0.15", duration: 0.3 });
-        });
-
-        // If you manage to click NO, cycle the text
+        // Clicking NO cycles the text, hops slightly, and makes YES bigger
         noBtn.addEventListener('click', () => {
             noBtn.innerText = pleas[pleaIndex % pleas.length];
             pleaIndex++;
+
+            // Little playful hop on click so she can actually read and keep pressing it
+            const moveX = (Math.random() - 0.5) * 80;
+            const moveY = (Math.random() - 0.5) * 40;
+            gsap.to(noBtn, { x: moveX, y: moveY, duration: 0.3, ease: "back.out(1.7)" });
+            
+            // Swell the YES button
+            gsap.to(yesBtn, { scale: "+=0.15", duration: 0.3 });
         });
 
         // THE VIBE SHIFT
@@ -116,12 +112,12 @@
               .to(voidBg, { opacity: 1, duration: 0.1 }, "-=0.1");
 
             // 2. Camera Shake Effect
-            tl.to("body", {
-                x: "random(-15, 15)",
-                y: "random(-15, 15)",
-                duration: 0.05,
-                repeat: 8,
-                yoyo: true
+            tl.to("body", { 
+                x: "random(-15, 15)", 
+                y: "random(-15, 15)", 
+                duration: 0.05, 
+                repeat: 8, 
+                yoyo: true 
             });
 
             // 3. Slam the Eminem image in with a heavy bounce
